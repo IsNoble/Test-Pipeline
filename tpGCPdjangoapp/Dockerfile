@@ -9,10 +9,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Mount application code to the image
 COPY . code
-WORKDIR \CODE
+WORKDIR /code
 
 EXPOSE 8000
 
 # Run the production server
-ENTRYPOINT [ "python", "tpGCPdjangoapp\manage.py" ]
+ENTRYPOINT [ "python", "manage.py" ]
 CMD [ "runserver", "0.0.0.0:8000" ]
