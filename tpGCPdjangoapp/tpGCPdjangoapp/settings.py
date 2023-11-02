@@ -25,7 +25,12 @@ SECRET_KEY = 'django-insecure-(1#-*9ch_ay84$*f%rkg33@29r%_f#7z435xs&1uo6690gpnjh
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# Allowed host, go back and clean out the local hosts later
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'python-django-app.on.dockerize.io',
+]
 
 
 # Application definition
@@ -37,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'Hello_World_Tester',
 ]
 
 MIDDLEWARE = [
