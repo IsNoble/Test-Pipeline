@@ -1,6 +1,6 @@
 terraform {
  backend "gcs" {
-   bucket  = "app-demo-smason-remotestate-bucket"
+   bucket  = "smason-test-pipeline-gcp-remote-state-bucket"
    prefix  = "terraform/state"
  }
 }

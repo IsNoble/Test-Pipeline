@@ -17,7 +17,8 @@
 module "cloud-storage" {
   source  = "terraform-google-modules/cloud-storage/google"
 
-  names       = ["${var.project_id}-remotestate-bucket"]
+  #names       = ["${var.project_id}-remotestate-bucket"]
+  names      = [var.bucket_name]
   project_id = var.project_id
   location   = "us"
 
@@ -33,7 +34,6 @@ module "cloud-storage" {
   }]
 
   custom_placement_config = {
-    data_locations : ["US-EAST4", "US-WEST1"]
     data_locations : ["US-EAST4", "US-WEST1"]
   }
 }

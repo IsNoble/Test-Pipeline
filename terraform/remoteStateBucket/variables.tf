@@ -18,3 +18,8 @@ variable "project_id" {
   description = "The ID of the project in which to provision resources."
   type        = string
 }
+
+variable "bucket_name" {
+  description = "The name of the bucket you want to create"
+  type        = string
+}
