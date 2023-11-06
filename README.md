@@ -1,5 +1,5 @@
 ### Deployment
-Currently deployed at [stephenrmason.net](www.stephenrmason.net)
+Currently deployed at [stephenrmason.net](http://www.stephenrmason.net)
 
 ### Architecture
 - Basic tests are run via a github workflow [Here](https://github.com/IsNoble/Test-Pipeline-GCP/blob/main/.github/workflows/python-app.yml)
