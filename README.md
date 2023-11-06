@@ -4,6 +4,7 @@ Currently deployed at [stephenrmason.net](www.stephenrmason.net)
 ### Architecture
 - Basic tests are run via a github workflow [Here](https://github.com/IsNoble/Test-Pipeline-GCP/blob/main/.github/workflows/python-app.yml)
 - Application is containerized with docker and pushed to ghcr [Here](https://github.com/IsNoble/Test-Pipeline-GCP/blob/main/.github/workflows/docker-publish.yml)
+- Google resournces created via terraform files [Here](https://github.com/IsNoble/Test-Pipeline-GCP/tree/v0.5.0/terraform)
 - Docker image is pulled by Kubernetes deployment, traffic from [stephenrmason.net](www.stephenrmason.net) is directed to the pods via a LoadBalancer, code [Here](https://github.com/IsNoble/Test-Pipeline-GCP/blob/main/tpGCPdjangoapp/tpgcpdjangoapp.yaml) and cluster [Here](https://console.cloud.google.com/kubernetes/clusters/details/us-central1/simple-autopilot-public-cluster/details?project=smason-test-pipeline-gcp)
 
 
