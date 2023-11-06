@@ -10,3 +10,4 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 8080
+      #If you don't provide a specific nodePort: It will just grab one from the Valid range (30000-32767)
