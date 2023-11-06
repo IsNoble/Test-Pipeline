@@ -29,6 +29,8 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
+    'www.stephenrmason.net',
+    'stephenrmason.net',
     'python-django-app.on.dockerize.io',
 ]
 
