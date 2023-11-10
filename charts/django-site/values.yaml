@@ -9,7 +9,7 @@ image:
   # This setting makes nodes pull the docker image every time before
   # starting the pod. This is useful when debugging, but should be turned
   # off in production.
-  PullPolicy: Always
+  imagePullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: "main"
 
