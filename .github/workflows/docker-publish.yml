@@ -10,8 +10,8 @@ on:
     branches: [ "main" ]
     # Publish semver tags as releases.
     tags: [ 'v*.*.*' ]
-  pull_request:
-    branches: [ "main" ]
+  #pull_request:
+    #branches: [ "main" ]
 
 env:
   # Use docker.io for Docker Hub if empty
@@ -21,8 +21,22 @@ env:
 
 
 jobs:
-  build:
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      pCode: ${{ steps.filter.outputs.pCode }}
+    steps:
+    # For pull requests it's not necessary to checkout the code
+    - uses: dorny/paths-filter@v2
+      id: filter
+      with:
+        filters: |
+          pCode: 
+            - 'tpGCPdjangoapp/**'
 
+  build:
+    needs: changes
+    if: ${{ needs.changes.outputs.pCode == 'true' }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -51,6 +65,8 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+
+          
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
       - name: Extract Docker metadata
