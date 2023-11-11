@@ -42,8 +42,8 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        if [ -f tpGCPdjangoapp/requirements.txt ]; then pip install -r tpGCPdjangoapp/requirements.txt; fi
+        if [ -f tpGCPdjango/requirements.txt ]; then pip install -r tpGCPdjangoapp/requirements.txt; fi
     - name: Run migrations
-      run: python tpGCPdjangoapp/manage.py migrate
+      run: python tpGCPdjango/manage.py migrate
     - name: Run tests
-      run: python tpGCPdjangoapp/manage.py test
+      run: python tpGCPdjango/manage.py test
