@@ -19,7 +19,9 @@ jobs:
     outputs:
       pCode: ${{ steps.filter.outputs.pCode }}
     steps:
-    # For pull requests it's not necessary to checkout the code
+    - name: Checkout repository
+      uses: actions/checkout@v3
+    # For pull requests it's not necessary to checkout the code. For Push you do?
     - uses: dorny/paths-filter@v2
       id: filter
       with:
