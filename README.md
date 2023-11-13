@@ -9,7 +9,9 @@ Currently deployed via a helm manged GKE cluster at [stephenrmason.net](http://w
 
 
 # Test-Pipeline-GCP
-A demo of a GCP based CI/CD Pipeline
+A demo of a GCP based CI/CD Pipeline.
+CI (Git Actions)
+CD (ArgoCD/Kubernetes/GKE)
 
 ### Disclaimer
 This project is purely for example/educational purposes. For a production static web page I would just publish the container and use [Google Cloud Run](https://cloud.google.com/run?hl=en), which is much more cost effective
@@ -20,13 +22,15 @@ This project is purely for example/educational purposes. For a production static
 - ~~use Google Manged SSL to create a cert for [PLACEHOLDER DOMAIN NAME]~~ NOTE: Did not need to do this yet, will implement later
   - ~~Acquire domain name for project~~
 - ~~Add DNS entry that points to the LoadBalancer of k8'S SERVICE~~
-- Packages K8's manifest into a Helm chart
+- ~~Packages K8's manifest into a Helm chart~~
+- ~~Remove (currently) redundant k8's manifest files~~
 - Add terraform code to generate bucket for static django app files
   - set public ACL for static storage bucket.
-- Remove (currently) redundant k8's manifest files
-  - Alternatively, use extra files to setup https
 - Deploy ArgoCD via helm to my cluster
+- Setup and configure external DNS
+- Setup and configure CertManager
+- Setup HTTPS vis Istio Gateway
 - Re-add cosign for docker image signing
-- Setup a service account for applications to access the GCP project. 
+- Per GitOps best practice, Seperate application code and configuration code into seperate repos
 
 
