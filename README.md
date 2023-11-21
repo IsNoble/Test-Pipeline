@@ -1,5 +1,6 @@
 ### Deployment
-Currently deployed via a helm manged GKE cluster at [stephenrmason.net](http://www.stephenrmason.net)
+~~Currently deployed via a helm manged GKE cluster at [stephenrmason.net](http://www.stephenrmason.net)~~
+Above currently non-functional due to cost of continuously running multiple pods in GKE.
 
 ### Architecture
 - Basic tests are run via a github workflow [Here](https://github.com/IsNoble/Test-Pipeline-GCP/blob/main/.github/workflows/python-app.yml)
@@ -24,9 +25,11 @@ This project is purely for example/educational purposes. For a production static
 - ~~Add DNS entry that points to the LoadBalancer of k8'S SERVICE~~
 - ~~Packages K8's manifest into a Helm chart~~
 - ~~Remove (currently) redundant k8's manifest files~~
-- Add terraform code to generate bucket for static django app files
+- ~~Add terraform code to generate bucket for static django app files~~
+  - Generate static storage bucket
   - set public ACL for static storage bucket.
-- Deploy ArgoCD via helm to my cluster
+- ~~Deploy ArgoCD via helm to my cluster~~
+  - ON HOLD: argoCD testing will take place in local minikube cluster due to cost constraints. 
 - Setup and configure external DNS
 - Setup and configure CertManager
 - Setup HTTPS vis Istio Gateway
