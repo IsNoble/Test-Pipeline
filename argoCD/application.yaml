@@ -2,14 +2,15 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: djangosite-argo-application
-  # namespace: default
+  namespace: default
 spec:
   project: default
-
   source:
-    repoUrl: https://github.com/IsNoble/Test-Pipeline-GCP
+    chart: django-site
+    repoURL: https://github.com/IsNoble/Test-Pipeline-GCP
     targetRevision: HEAD
-    path: charts
+    helm:
+      releaseName: django-site
   destination: 
     server: https://kubernetes.default.svc
     namespace: djangosite
