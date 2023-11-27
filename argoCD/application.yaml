@@ -1,3 +1,4 @@
+# iDQOql9wTZ8ALp-r
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -6,9 +7,9 @@ metadata:
 spec:
   project: default
   source:
-    chart: django-site
+    path: charts/django-site
     repoURL: https://github.com/IsNoble/Test-Pipeline-GCP
-    targetRevision: HEAD
+    targetRevision: main
     helm:
       releaseName: django-site
   destination: 
